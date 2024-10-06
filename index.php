@@ -20,12 +20,13 @@
                 <button type="submit" name="operasi" value="-">-</button>
                 <button type="submit" name="operasi" value="x">x</button>
                 <button type="submit" name="operasi" value="/">/</button>
+                <button type="reset" onclick="document.getElementById('hasil').innerHTML = '';">Reset</button> <!-- Tombol reset -->
             </div>
         </form>
 
         <div id="hasil">
             <?php
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['operasi'])) {
                 $angka1 = $_POST['angka1'];
                 $angka2 = $_POST['angka2'];
                 $operasi = $_POST['operasi'];
